@@ -20,7 +20,7 @@ NULL
 1
 [FinStack]
 [Puertos]
-1
+3
 [Version Puerto]
 0
 Timer
@@ -32,6 +32,28 @@ Timer
 10
 49
 EDROOMTimingSAP
+[Version Puerto]
+0
+DroneMngCtrl
+0
+1
+0
+[Version Grafico Puerto]
+0
+41
+4
+CPDroneMngCtrl
+[Version Puerto]
+0
+DroneMngCtrl2
+0
+1
+2
+[Version Grafico Puerto]
+0
+68
+4
+CPDroneMngCtrl
 [FinPuertos]
 [ActoresComponente]
 0
