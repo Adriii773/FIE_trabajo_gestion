@@ -20,7 +20,7 @@ NULL
 1
 [FinStack]
 [Puertos]
-3
+2
 [Version Puerto]
 0
 Timer
@@ -41,17 +41,6 @@ DroneMngCtrl
 [Version Grafico Puerto]
 0
 41
-4
-CPDroneMngCtrl
-[Version Puerto]
-0
-DroneMngCtrl2
-0
-1
-2
-[Version Grafico Puerto]
-0
-68
 4
 CPDroneMngCtrl
 [FinPuertos]
