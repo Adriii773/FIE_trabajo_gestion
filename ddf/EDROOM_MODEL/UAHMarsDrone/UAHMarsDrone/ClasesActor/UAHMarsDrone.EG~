@@ -23,7 +23,24 @@ NULL
 0
 [FinPuertos]
 [ActoresComponente]
+1
+[Version Actor Componente]
+2
+DroneMng
+1
 0
+0
+10
+7
+EDROOMprioNormal
+
+[Version Grafico Actor Componente]
+0
+27.7344
+34.7023
+62.5
+59.5483
+CCDroneMng
 [FinActoresComponente]
 [Uniones]
 0

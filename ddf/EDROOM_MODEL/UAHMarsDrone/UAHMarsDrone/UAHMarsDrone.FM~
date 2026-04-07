@@ -60,7 +60,7 @@ EDROOMTarget
 [Version]
 2
 DUMMY_MESCC_Lib
-1
+2
 [ActorDeployment]
 [Version]
 1
@@ -71,6 +71,18 @@ EDROOMprioNormal
  
 UAHMarsDrone
 NULL
+[EventsDeployment]
+0
+[ActorDeployment]
+[Version]
+1
+DroneMng
+2
+10
+EDROOMprioNormal
+ 
+CCDroneMng
+UAHMarsDrone
 [EventsDeployment]
 0
 [EventDeployment]
