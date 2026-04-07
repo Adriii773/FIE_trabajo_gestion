@@ -20,29 +20,7 @@ NULL
 1
 [FinStack]
 [Puertos]
-2
-[Version Puerto]
 0
-Timer
-0
-1
-1
-[Version Grafico Puerto]
-0
-10
-49
-EDROOMTimingSAP
-[Version Puerto]
-0
-DroneMngCtrl
-0
-1
-0
-[Version Grafico Puerto]
-0
-41
-4
-CPDroneMngCtrl
 [FinPuertos]
 [ActoresComponente]
 0
@@ -51,7 +29,7 @@ CPDroneMngCtrl
 0
 [FinUniones]
 [NumTimers]
-2
+0
 [FinNumTimers]
 [NumMsgDef]
 10
@@ -74,12 +52,7 @@ v1
 1
 1
 [Eventos]
-1
-[Event]
-[Version]
-1
-EvTimerTimer
-Timer
+0
 [Maquina de Estados]
 [Version Maquina de Estados]
 1
