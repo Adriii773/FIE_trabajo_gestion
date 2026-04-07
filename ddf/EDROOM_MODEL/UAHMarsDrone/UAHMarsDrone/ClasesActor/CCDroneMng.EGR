@@ -81,7 +81,7 @@ I
 SelfTest
 ;
 ;
-;
+FDroneSelfTest();
 ;
 ;
 1
@@ -247,11 +247,11 @@ SelfTest
 OSubEst
 Ready
 DSubEst
-;
+FGetConfig();
 [Trigger]
  
  
-true
+FReplyDroneReady()
  
  
  
@@ -270,11 +270,11 @@ Ready
 OSubEst
 ExecTC
 DPEleccion
-;
+FExecDroneTC();
 [Trigger]
  
  
-true
+;
  
  
  
@@ -314,9 +314,62 @@ true
 [VariablesConstantes]
 0
 [Metodos]
-0
+4
 [Version Metodos]
 21
+BasicAction
+FDroneSelfTest()
+0
+0
+0
+0
+1
+
+3
+pus_service129_drone_selftest();
+
+}
+Guard
+FReplyDroneReady()
+0
+0
+0
+0
+1
+
+4
+pus_service129_drone_ready();
+
+Msg->Reply(SDroneReady);
+}
+BasicAction
+FGetConfig()
+0
+0
+0
+0
+1
+
+5
+void FGetConfig(){
+
+	CDDroneConfig & varSDroneSetUp = *(CDDroneConfig *) Msg->data;
+	pus_service129_setup(varSDroneSetUp);
+}
+BasicAction
+FExecDroneTC()
+0
+0
+0
+0
+1
+
+5
+void FExecDroneTC(){
+CDTCHandler & varSDroneSetUp = *( CDTCHandler *) Msg->data;
+CDTCHandler & varSDroneTC = *( CDTCHandler*) Msg->data;
+varSDroneTC.ExecDroneTC();
+}
 [MaquinasSubEstados]
 0
 [FinMaquinasSubEstados]
