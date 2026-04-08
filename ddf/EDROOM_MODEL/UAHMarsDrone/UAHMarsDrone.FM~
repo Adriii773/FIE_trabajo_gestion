@@ -19,9 +19,9 @@ UAHMarsDrone
 [CurrentTarget]
 0
 [MESP Directory]
-C:\Users\adrig\OneDrive\Documentos\GitHub\obdh_proy_26_Adrian_Garcia_Afan_de_Rivera\ddf\EDROOM_MODEL\UAHMarsDrone\uah_mars_drone_freertos_hito1\asw
+C:\Users\adrig\OneDrive\Documentos\GitHub\Trabajo_gestion\ddf\uah_mars_drone_hito1\uah_mars_drone_freertos_hito1\asw
 [MESP main Directory]
-C:\Users\adrig\OneDrive\Documentos\GitHub\obdh_proy_26_Adrian_Garcia_Afan_de_Rivera\ddf\EDROOM_MODEL\UAHMarsDrone\uah_mars_drone_freertos_hito1
+C:\Users\adrig\OneDrive\Documentos\GitHub\Trabajo_gestion\ddf\uah_mars_drone_hito1\uah_mars_drone_freertos_hito1
 [MESP main prototype]
 int main (void)
 [MESP main return]
@@ -72,6 +72,22 @@ EDROOMprioNormal
 UAHMarsDrone
 NULL
 [EventsDeployment]
+1
+[EventDeployment]
+[Version]
+1
+EvTimerTimer
+Timer
+1
+1
+0
+0
+[CEgRoomDeadLine]
+[Version]
+1
+-1
+-1
+0
 0
 [ActorDeployment]
 [Version]
@@ -90,7 +106,7 @@ UAHMarsDrone
 1
 EvTimerDroneTimer
 Timer
-1
+2
 1
 0
 0
