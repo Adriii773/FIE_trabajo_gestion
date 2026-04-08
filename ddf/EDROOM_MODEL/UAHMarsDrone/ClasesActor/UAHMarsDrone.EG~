@@ -20,18 +20,7 @@ NULL
 1
 [FinStack]
 [Puertos]
-2
-[Version Puerto]
-0
-DroneMngCtrl
-0
 1
-0
-[Version Grafico Puerto]
-0
-93
-48
-CPDroneMngCtrl
 [Version Puerto]
 0
 Timer

@@ -23,7 +23,7 @@ NULL
 2
 [Version Puerto]
 0
-DroneMngCtrl
+DataHandler
 0
 1
 0
@@ -55,13 +55,13 @@ DroneMng
 10
 7
 EDROOMprioNormal
-
+ 
 [Version Grafico Actor Componente]
 0
-41.0156
-37.9877
-58.5938
-60.5749
+38.8672
+37.7823
+64.8438
+63.2444
 CCDroneMng
 [FinActoresComponente]
 [Uniones]
