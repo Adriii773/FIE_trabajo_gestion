@@ -19,14 +19,6 @@ UAHMarsDrone::UAHMarsDrone(TEDROOMComponentID id,
 		CEDROOMComponent(id,EDROOMprioMINIMUM+1,roomNumMaxMens,
 				roomtaskPrio,roomStack, pActorMemory ),
 
-		// *********** Timing service access point *********
-
-		EDROOMtimingSAP(this, 3,&pActorMemory->TimingMemory),
-
-		// *******************  Timers  ********************
-
-		Timer(&EDROOMtimingSAP, 2 ),
-
 		// ***************	Top State  *****************
 
 		edroomTopState(*this)
@@ -60,10 +52,6 @@ int UAHMarsDrone::EDROOMConfig()
 int UAHMarsDrone::EDROOMStart()
 {
 
-
-	//****************** Timing Task Start*****************
-
-	EDROOMtimingSAP.Start();
 
 	//***************** CEDROOMComponent::EDROOMStart*********
 
@@ -102,7 +90,7 @@ bool UAHMarsDrone::EDROOMIsComponentFinished()
 {
 
 
-	return ( CEDROOMComponent::EDROOMIsComponentFinished());
+	return ( DroneMng.EDROOMIsComponentFinished() && CEDROOMComponent::EDROOMIsComponentFinished());
 
 }
 
@@ -121,8 +109,6 @@ void UAHMarsDrone::CEDROOMMemory::SetMemory(TEDROOMUInt32 numMessages_ ,
 
 		CEDROOMComponentMemory::SetMemory( numMessages_,MessagesMem_, MessagesMemMarks_,
 			numberOfNodes_,QueueNodesMem_, QueueNodesMemMarks_, QueueHeads);
-
-		TimingMemory.SetMemory(3,TimerInf,&TimerInfMarks[0],TimeOutMsgs,&TimeOutMsgsMarks[0]);
 
 
 }
