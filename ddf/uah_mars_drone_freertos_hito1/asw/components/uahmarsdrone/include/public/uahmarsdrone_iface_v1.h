@@ -9,6 +9,13 @@
 #include <public/edroomsl_iface_v1.h>
 
 //******************************************************************************
+// Data Classes
+
+#include <public/cddroneconfig_iface_v1.h>
+#include <public/cdtchandler_iface_v1.h>
+
+
+//******************************************************************************
 // Required software interfaces
 
 #include <public/emu_hw_timecode_drv_v1.h>
@@ -28,7 +35,10 @@ public:
 	 *
 	 */
 	 enum TEDROOMUAHMarsDroneSignal { EDROOMSignalTimeout, 
-							EDROOMSignalDestroy };
+							EDROOMSignalDestroy, 
+							SDroneTC, 
+							SDroneSetUp, 
+							SDronerReady };
 
 	/**
 	 * \class UAHMarsDrone::CEDROOMMemory
@@ -42,7 +52,21 @@ public:
 			//!Array of Message Queue Heads, one for each priority
 			CEDROOMQueue::CQueueHead QueueHeads[EDROOMprioMINIMUM+1];
 
-		public:
+			//************ Component Timing Service Memory************
+
+			//!Component Timing Service Timer Info Memory
+			CEDROOMTimerInfo TimerInf[3];
+			//!Component Timing Service Timer Info Marks Memory
+			bool TimerInfMarks[3];
+			//!Component Timing Service TimeOut Messages Memory
+			CEDROOMTimeOutMessage TimeOutMsgs[3];
+			//!Component Timing Service TimeOut Messages Marks Memory
+			bool TimeOutMsgsMarks[3];
+
+		public: 
+
+			//!Component Timing Service Memory Object
+			CEDROOMTimingMemory TimingMemory;
 
 
 
@@ -69,6 +93,20 @@ public:
 	//******************  Component Communication Ports *******************
 	// ********************************************************************
 
+	//! DroneMngCtrl Component Port
+	CEDROOMInterface	DroneMngCtrl;
+
+
+	// ********************************************************************
+	// ********************  Timing Service Interface *********************
+	// ********************************************************************
+
+	//! Timing Service Access Point. It is common to all timing ports.
+	CEDROOMTimingSAP	 EDROOMtimingSAP;
+
+
+	//! Timer Timing Port
+	CEDROOMTimingInterface	Timer;
 
 
 
@@ -136,7 +174,10 @@ public:
 	 *
 	 */
 	enum TEDROOMUAHMarsDroneSignal { EDROOMSignalTimeout,
-		EDROOMSignalDestroy };
+		EDROOMSignalDestroy,
+		SDroneTC,
+		SDroneSetUp,
+		SDronerReady };
 
 
 		friend class UAHMarsDrone;
@@ -151,6 +192,8 @@ public:
 		CEDROOMMessage * &MsgBack;
 
 		//!Component ports
+		CEDROOMInterface & DroneMngCtrl;
+		CEDROOMTimingInterface & Timer;
 
 
 		//! State Identifiers

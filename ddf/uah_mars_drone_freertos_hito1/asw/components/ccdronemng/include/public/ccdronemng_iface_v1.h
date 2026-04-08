@@ -36,9 +36,9 @@ public:
 	 */
 	 enum TEDROOMCCDroneMngSignal { EDROOMSignalTimeout, 
 							EDROOMSignalDestroy, 
-							SDroneSetUp, 
 							SDroneTC, 
-							SDroneReady };
+							SDroneSetUp, 
+							SDronerReady };
 
 	/**
 	 * \class CCDroneMng::CEDROOMMemory
@@ -175,9 +175,9 @@ public:
 	 */
 	enum TEDROOMCCDroneMngSignal { EDROOMSignalTimeout,
 		EDROOMSignalDestroy,
-		SDroneSetUp,
 		SDroneTC,
-		SDroneReady };
+		SDroneSetUp,
+		SDronerReady };
 
 
 		friend class CCDroneMng;
@@ -204,7 +204,7 @@ public:
 
 		//!Transition Identifiers
 		enum TEDROOMTransitionID{Init,
-			 Transicion1,
+			Transicion1,
 			ExecTC,
 			ExecTC_InitFlightPlan,
 			ExecTC_WaitFP,
