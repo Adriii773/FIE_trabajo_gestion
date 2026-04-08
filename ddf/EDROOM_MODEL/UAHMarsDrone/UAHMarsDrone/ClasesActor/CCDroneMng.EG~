@@ -328,6 +328,13 @@ true
 350 348 441 257 1
 [FinGraficoTransicion]
 [VariablesConstantes]
+1
+[Version VariYConst]
+0
+VNextCtrl
+Pr_Time
+
+Variable
 0
 [Metodos]
 9
@@ -419,17 +426,15 @@ FProgNextCtrl()
 0
 1
 
-5
+3
 	 
-	//Timing Service useful methods
-	 
-	//time.GetTime(); // Get current monotonic time
-	//time.Add(X,Y); // Add X sec + Y microsec
+VNextCtrl += Pr_Time(0, 100000)
+time = VNextCtrl;
 [ServiceRequest]
 InformAt
 DroneTimer
 EDROOMSignalTimeout
-CDTCHandler
+
 EDROOMprioVeryHigh
 Guard
 GExecFlightPlan()
@@ -449,17 +454,22 @@ FInitFlightPlan()
 0
 1
 
-5
-	 
-	//Timing Service useful methods
-	 
-	//time.GetTime(); // Get current monotonic time
-	//time.Add(X,Y); // Add X sec + Y microsec
+4
+pus_service129_init_flight_plan();
+VNextCtrl.GetTime();
+
+
+VNextCtrl += Pr_Time(0, 100000);
+
+
+Pr_Time time = VNextCtrl;
+
+	
 [ServiceRequest]
 InformAt
 DroneTimer
 EDROOMSignalTimeout
-CDTCHandler
+
 EDROOMprioVeryHigh
 [MaquinasSubEstados]
 0
