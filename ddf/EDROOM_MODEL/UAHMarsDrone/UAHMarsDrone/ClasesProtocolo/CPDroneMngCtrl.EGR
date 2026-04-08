@@ -14,7 +14,7 @@ SDroneTC
 [Version Dato]
 1
 CDTCHandler
-C:\Users\adrian.garciaar\Documents\GitHub\FIE_trabajo_gestion\ddf\EDROOM_MODEL\UAHMarsDrone\UAHMarsDrone\
+C:\Users\adrig\OneDrive\Documentos\GitHub\obdh_proy_26_Adrian_Garcia_Afan_de_Rivera\ddf\EDROOM_MODEL\UAHMarsDrone\UAHMarsDrone\
 es.uah.aut.srg.edroom.mclev.data_sai.cdtchandler
 v1
 0
@@ -26,10 +26,10 @@ SDroneSetUp
 [Version Dato]
 1
 CDDroneConfig
-C:\Users\adrian.garciaar\Documents\GitHub\FIE_trabajo_gestion\ddf\EDROOM_MODEL\UAHMarsDrone\UAHMarsDrone\
+C:\Users\adrig\OneDrive\Documentos\GitHub\obdh_proy_26_Adrian_Garcia_Afan_de_Rivera\ddf\EDROOM_MODEL\UAHMarsDrone\UAHMarsDrone\
 es.uah.aut.srg.edroom.mclev.data_sai.cddroneconfig
 v1
-0
+1
 1
 [Version Mensaje]
 1
@@ -39,8 +39,9 @@ SDroneReady
 [Version Dato]
 1
 NULL
-C:\Users\adrian.garciaar\Documents\GitHub\FIE_trabajo_gestion\ddf\EDROOM_MODEL\UAHMarsDrone\UAHMarsDrone\
+C:\Users\adrig\OneDrive\Documentos\GitHub\obdh_proy_26_Adrian_Garcia_Afan_de_Rivera\ddf\EDROOM_MODEL\UAHMarsDrone\UAHMarsDrone\
 es.uah.aut.srg.edroom.mclev.data_sai.NULL
 v1
-0
+2
+SDroneSetUp
 0
