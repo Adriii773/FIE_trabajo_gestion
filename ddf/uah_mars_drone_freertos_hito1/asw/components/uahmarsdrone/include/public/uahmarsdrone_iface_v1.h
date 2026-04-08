@@ -9,13 +9,6 @@
 #include <public/edroomsl_iface_v1.h>
 
 //******************************************************************************
-// Data Classes
-
-#include <public/cddroneconfig_iface_v1.h>
-#include <public/cdtchandler_iface_v1.h>
-
-
-//******************************************************************************
 // Required software interfaces
 
 #include <public/emu_hw_timecode_drv_v1.h>
@@ -35,10 +28,7 @@ public:
 	 *
 	 */
 	 enum TEDROOMUAHMarsDroneSignal { EDROOMSignalTimeout, 
-							EDROOMSignalDestroy, 
-							SDroneTC, 
-							SDroneSetUp, 
-							SDronerReady };
+							EDROOMSignalDestroy };
 
 	/**
 	 * \class UAHMarsDrone::CEDROOMMemory
@@ -93,8 +83,6 @@ public:
 	//******************  Component Communication Ports *******************
 	// ********************************************************************
 
-	//! DroneMngCtrl Component Port
-	CEDROOMInterface	DroneMngCtrl;
 
 
 	// ********************************************************************
@@ -174,10 +162,7 @@ public:
 	 *
 	 */
 	enum TEDROOMUAHMarsDroneSignal { EDROOMSignalTimeout,
-		EDROOMSignalDestroy,
-		SDroneTC,
-		SDroneSetUp,
-		SDronerReady };
+		EDROOMSignalDestroy };
 
 
 		friend class UAHMarsDrone;
@@ -192,7 +177,6 @@ public:
 		CEDROOMMessage * &MsgBack;
 
 		//!Component ports
-		CEDROOMInterface & DroneMngCtrl;
 		CEDROOMTimingInterface & Timer;
 
 

@@ -16,7 +16,6 @@ UAHMarsDrone::EDROOM_CTX_Top_0::EDROOM_CTX_Top_0(UAHMarsDrone &act,
 	EDROOMcomponent(act),
 	Msg(EDROOMcomponent.Msg),
 	MsgBack(EDROOMcomponent.MsgBack),
-	DroneMngCtrl(EDROOMcomponent.DroneMngCtrl),
 	Timer(EDROOMcomponent.Timer),
 	VEmuTimeCode(EDROOMpVarVEmuTimeCode)
 {
@@ -27,7 +26,6 @@ UAHMarsDrone::EDROOM_CTX_Top_0::EDROOM_CTX_Top_0(EDROOM_CTX_Top_0 &context):
 	EDROOMcomponent(context.EDROOMcomponent),
 	Msg(context.Msg),
 	MsgBack(context.MsgBack),
-	DroneMngCtrl(context.DroneMngCtrl),
 	Timer(context.Timer),
 	VEmuTimeCode(context.VEmuTimeCode)
 {
