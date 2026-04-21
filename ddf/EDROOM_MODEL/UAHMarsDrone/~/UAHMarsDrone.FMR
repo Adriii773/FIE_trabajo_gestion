@@ -104,7 +104,7 @@ UAHMarsDrone
 [EventDeployment]
 [Version]
 1
-EvTimerDroneTimer
+EvTimerTimer
 Timer
 2
 1

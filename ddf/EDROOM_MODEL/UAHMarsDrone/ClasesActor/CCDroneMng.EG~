@@ -37,11 +37,11 @@ CPDroneMngCtrl
 DroneTimer
 0
 1
-0
+1
 [Version Grafico Puerto]
 0
-4
-64
+26
+41
 EDROOMTimingSAP
 [FinPuertos]
 [ActoresComponente]

@@ -37,11 +37,11 @@ CPDroneMngCtrl
 DroneTimer
 0
 1
-0
+1
 [Version Grafico Puerto]
 0
-4
-64
+26
+41
 EDROOMTimingSAP
 [FinPuertos]
 [ActoresComponente]
@@ -139,7 +139,7 @@ FlightPlan
 [ObjetoGrafico]
 [Version Objeto Grafico]
 0
-158 382 428 60
+161 422 428 60
 [FinObjetoGrafico]
 [PuntosEleccion]
 2
@@ -180,7 +180,7 @@ FProgNextCtrl();
 [GraficoRama]
 [Version GraficoRama]
 0
-514 259 441 382 2
+514 259 444 422 2
 [FinGraficoRama]
 PlanDone
 GFlightPlanDone()
@@ -220,7 +220,7 @@ FInitFlightPlan();
 [GraficoRama]
 [Version GraficoRama]
 0
-264 345 265 382 0
+264 345 268 422 0
 [FinGraficoRama]
 WaitFP
 GExecFlightPlan()
@@ -333,7 +333,7 @@ true
 [GraficoTransicion]
 [Version GraficoTransicion]
 0
-532 382 531 271 3
+535 422 531 271 3
 [FinGraficoTransicion]
 [VariablesConstantes]
 1
@@ -399,7 +399,7 @@ Msg->data
 DataHandler
 SDroneSetUp
 CDDroneConfig
- 
+EDROOMprioVeryHigh
 Inform
 FInitFlightPlan()
 0
@@ -408,8 +408,7 @@ FInitFlightPlan()
 0
 1
  
-5
- 
+4
 pus_service129_init_flight_plan();	 
 VNextCtrl.GetTime();
 VNextCtrl += Pr_Time(0, 100000);
@@ -418,7 +417,7 @@ time = VNextCtrl;
 InformAt
 DroneTimer
 EDROOMSignalTimeout
-CDTCHandler
+CDDroneConfig
 EDROOMprioVeryHigh
 Inform
 FProgNextCtrl()
@@ -435,7 +434,7 @@ time = VNextCtrl;
 InformAt
 DroneTimer
 EDROOMSignalTimeout
-CDTCHandler
+CDDroneConfig
 EDROOMprioVeryHigh
 ReplyMsg
 FReplyDroneReady()

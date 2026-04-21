@@ -34,14 +34,14 @@ DataHandler
 CPDroneMngCtrl
 [Version Puerto]
 0
-DroneTimer
+Timer
 0
 1
-0
+1
 [Version Grafico Puerto]
 0
-4
-64
+26
+41
 EDROOMTimingSAP
 [FinPuertos]
 [ActoresComponente]
@@ -78,7 +78,7 @@ v1
 [Event]
 [Version]
 1
-EvTimerDroneTimer
+EvTimerTimer
 Timer
 [Maquina de Estados]
 [Version Maquina de Estados]
