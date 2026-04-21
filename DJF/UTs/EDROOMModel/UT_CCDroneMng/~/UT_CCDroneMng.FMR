@@ -6,7 +6,7 @@
 [Nombre Modelo]
 UT_CCDroneMng
 [Modificado]
-0
+1
 [Opciones Modelo]
 [Version Opciones Modelo]
 4
@@ -19,9 +19,9 @@ UT_CCDroneMng
 [CurrentTarget]
 0
 [MESP Directory]
-z:\home\atcsol\OBDH_2026-workspace\ut_ccdronemng_freertos\asw
+C:\Users\adrig\OneDrive\Documentos\GitHub\obdh_proy_26_Adrian_Garcia_Afan_de_Rivera\DJF\UTs\ut_ccdronemng_freertos\asw
 [MESP main Directory]
-z:\home\atcsol\OBDH_2026-workspace\ut_ccdronemng_freertos
+C:\Users\adrig\OneDrive\Documentos\GitHub\obdh_proy_26_Adrian_Garcia_Afan_de_Rivera\DJF\UTs\ut_ccdronemng_freertos
 [MESP main prototype]
 int main (void)
 [MESP main return]
