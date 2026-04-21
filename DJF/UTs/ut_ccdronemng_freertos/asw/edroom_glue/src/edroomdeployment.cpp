@@ -58,6 +58,36 @@ void CEDROOMSystemCommSAP::SetComponents(UT_CCDroneMng   *p_comp1,
 //*****************************************************************************
  
  
+TEDROOMSignal CEDROOMSystemCommSAP::C2DroneMngTester_PDroneCtrl__C3DroneMng_PDataHandler(TEDROOMSignal signalOut){
+ 
+	TEDROOMSignal signalIn;
+ 
+	switch(signalOut){
+ 
+		case( CCDroneMngTester::SDroneSetUp):	 signalIn=CCDroneMng::SDroneSetUp; break;
+ 
+		case( CCDroneMngTester::SDroneTC):	 signalIn=CCDroneMng::SDroneTC; break;
+ 
+		default: signalIn=(TEDROOMSignal)(-1); break;
+ 
+	}
+	return signalIn;
+ 
+}
+ 
+TEDROOMSignal CEDROOMSystemCommSAP::C3DroneMng_PDataHandler__C2DroneMngTester_PDroneCtrl(TEDROOMSignal signalOut){
+ 
+	TEDROOMSignal signalIn;
+ 
+	switch(signalOut){
+ 
+		default: signalIn=(TEDROOMSignal)(-1); break;
+ 
+	}
+	return signalIn;
+ 
+}
+ 
 TEDROOMSignal CEDROOMSystemCommSAP::C2DroneMngTester_PTesterCtrl__C1MainActor_PTesterCtrl(TEDROOMSignal signalOut){
  
 	TEDROOMSignal signalIn;
@@ -86,38 +116,6 @@ TEDROOMSignal CEDROOMSystemCommSAP::C1MainActor_PTesterCtrl__C2DroneMngTester_PT
  
 }
  
-TEDROOMSignal CEDROOMSystemCommSAP::C3DroneMng_PDroneCtrl__C2DroneMngTester_PDroneCtrl(TEDROOMSignal signalOut){
- 
-	TEDROOMSignal signalIn;
- 
-	switch(signalOut){
- 
-		case( CCDroneMng::SDroneReady):	 signalIn=CCDroneMngTester::SDroneReady; break;
- 
-		default: signalIn=(TEDROOMSignal)(-1); break;
- 
-	}
-	return signalIn;
- 
-}
- 
-TEDROOMSignal CEDROOMSystemCommSAP::C2DroneMngTester_PDroneCtrl__C3DroneMng_PDroneCtrl(TEDROOMSignal signalOut){
- 
-	TEDROOMSignal signalIn;
- 
-	switch(signalOut){
- 
-		case( CCDroneMngTester::SDroneSetUp):	 signalIn=CCDroneMng::SDroneSetUp; break;
- 
-		case( CCDroneMngTester::SDroneTC):	 signalIn=CCDroneMng::SDroneTC; break;
- 
-		default: signalIn=(TEDROOMSignal)(-1); break;
- 
-	}
-	return signalIn;
- 
-}
- 
  
  
 //*****************************************************************************
@@ -137,7 +135,7 @@ void CEDROOMSystemCommSAP::RegisterInterfaces(){
  
 	// Register Interface for Component 3
 	m_localCommSAP.RegisterInterface(1, mp_comp3->DroneTimer, mp_comp3);
-	m_localCommSAP.RegisterInterface(2, mp_comp3->DroneCtrl, mp_comp3);
+	m_localCommSAP.RegisterInterface(2, mp_comp3->DataHandler, mp_comp3);
  
 }
  
@@ -147,13 +145,13 @@ void CEDROOMSystemCommSAP::RegisterInterfaces(){
  
 void CEDROOMSystemCommSAP::SetLocalConnections(){
  
-	m_localCommSAP.Connect(mp_comp2->TesterCtrl, mp_comp1->TesterCtrl, connections[0], 
+	m_localCommSAP.Connect(mp_comp2->DroneCtrl, mp_comp3->DataHandler, connections[0], 
+					C2DroneMngTester_PDroneCtrl__C3DroneMng_PDataHandler, 
+					C3DroneMng_PDataHandler__C2DroneMngTester_PDroneCtrl);
+ 
+	m_localCommSAP.Connect(mp_comp2->TesterCtrl, mp_comp1->TesterCtrl, connections[1], 
 					C2DroneMngTester_PTesterCtrl__C1MainActor_PTesterCtrl, 
 					C1MainActor_PTesterCtrl__C2DroneMngTester_PTesterCtrl);
- 
-	m_localCommSAP.Connect(mp_comp3->DroneCtrl, mp_comp2->DroneCtrl, connections[1], 
-					C3DroneMng_PDroneCtrl__C2DroneMngTester_PDroneCtrl, 
-					C2DroneMngTester_PDroneCtrl__C3DroneMng_PDroneCtrl);
  
 }
  

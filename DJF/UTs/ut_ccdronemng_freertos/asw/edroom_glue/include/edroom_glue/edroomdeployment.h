@@ -75,13 +75,13 @@ class CEDROOMSystemCommSAP{
  
 //Signal Conversion
  
-	static TEDROOMSignal C2DroneMngTester_PTesterCtrl__C1MainActor_PTesterCtrl(TEDROOMSignal signal);
-	static TEDROOMSignal C1MainActor_PTesterCtrl__C2DroneMngTester_PTesterCtrl(TEDROOMSignal signal);
+	static TEDROOMSignal C2DroneMngTester_PDroneCtrl__C3DroneMng_PDataHandler(TEDROOMSignal signal);
+	static TEDROOMSignal C3DroneMng_PDataHandler__C2DroneMngTester_PDroneCtrl(TEDROOMSignal signal);
  
 //Signal Conversion
  
-	static TEDROOMSignal C3DroneMng_PDroneCtrl__C2DroneMngTester_PDroneCtrl(TEDROOMSignal signal);
-	static TEDROOMSignal C2DroneMngTester_PDroneCtrl__C3DroneMng_PDroneCtrl(TEDROOMSignal signal);
+	static TEDROOMSignal C2DroneMngTester_PTesterCtrl__C1MainActor_PTesterCtrl(TEDROOMSignal signal);
+	static TEDROOMSignal C1MainActor_PTesterCtrl__C2DroneMngTester_PTesterCtrl(TEDROOMSignal signal);
  
  
 //!Register Interfaces

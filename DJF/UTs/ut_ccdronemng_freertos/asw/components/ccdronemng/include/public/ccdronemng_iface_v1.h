@@ -208,4 +208,183 @@ public:
 			ExecTC,
 			ExecTC_InitFlightPlan,
 			ExecTC_WaitFP,
-			
+			CtrlAlgorithm,
+			CtrlAlgorithm_PlanDone,
+			CtrlAlgorithm_ProgNextCtrl,
+			EDROOMMemoryTrans };
+
+
+
+		//!Variables
+		Pr_Time &VNextCtrl;
+
+
+
+
+		//!Constructor
+		EDROOM_CTX_Top_0 (CCDroneMng &act,
+				Pr_Time & EDROOMpVarVNextCtrl );
+
+		//!Copy constructor
+		EDROOM_CTX_Top_0 (EDROOM_CTX_Top_0 &context);
+
+	public:
+
+		/**
+		 * \brief Search Context transition 
+		 * \param edroomCurrentTrans returns the context transition 
+
+		 * \return true if context transition is found 
+
+		 */
+		bool EDROOMSearchContextTrans(TEDROOMTransId &edroomCurrentTrans);
+
+		//! \brief Get new message from the Queue
+
+		void EDROOMNewMessage()
+		{ EDROOMcomponent.EDROOMNewMsg(); }
+
+		/**
+		 * \brief Get and Clear the Error Flags 
+		 * \return the error flags  
+
+		 */
+		 TEDROOMUInt32 GetAndClearErrorFlags(){ return EDROOMcomponent.GetAndClearErrorFlags();}
+
+		// User-defined Functions
+
+		/**
+		 * \brief  
+		 */
+		void	FDroneSelfTest();
+
+		/**
+		 * \brief  
+		 */
+		void	FExecDroneTC();
+
+		/**
+		 * \brief  
+		 */
+		void	FFlightCtrlAlgorithm();
+
+		/**
+		 * \brief  
+		 */
+		void	FGetConfig();
+
+		/**
+		 * \brief  
+		 */
+		void	FInitFlightPlan();
+
+		/**
+		 * \brief  
+		 */
+		void	FProgNextCtrl();
+
+		/**
+		 * \brief  
+		 */
+		void	FReplyDroneReady();
+
+		/**
+		 * \brief  
+		 */
+		void	FToReady();
+
+		/**
+		 * \brief  
+		 */
+		bool	GExecFlightPlan();
+
+		/**
+		 * \brief  
+		 */
+		bool	GFlightPlanDone();
+
+	};
+
+	// ***********************************************************************
+
+	// class EDROOM_SUB_Top_0
+
+	// ***********************************************************************
+
+
+
+	class EDROOM_SUB_Top_0 : public EDROOM_CTX_Top_0 {
+
+	protected:
+
+
+
+		//!current state identifier
+		EDROOM_CTX_Top_0::TEDROOMStateID edroomCurrentState;
+
+		//!next state identifier
+		EDROOM_CTX_Top_0::TEDROOMStateID edroomNextState;
+
+		//!Variables
+		Pr_Time VNextCtrl;
+
+
+
+
+	public:
+
+		//! Constructor
+		EDROOM_SUB_Top_0 (CCDroneMng &act );
+
+
+		//! Top Context Behaviour 
+
+		void EDROOMBehaviour();
+
+		//!Top Context Init
+		void EDROOMInit();
+
+		//! Initial substate arrival
+		TEDROOMTransId EDROOMIArrival();
+
+		// ***********************************************************************
+
+		// Leaf SubState SelfTest
+
+		// ***********************************************************************
+
+
+
+		TEDROOMTransId EDROOMSelfTestArrival();
+
+		// ***********************************************************************
+
+		// Leaf SubState Ready
+
+		// ***********************************************************************
+
+
+
+		TEDROOMTransId EDROOMReadyArrival();
+
+		// ***********************************************************************
+
+		// Leaf SubState FlightPlan
+
+		// ***********************************************************************
+
+
+
+		TEDROOMTransId EDROOMFlightPlanArrival();
+
+	};
+
+protected:
+
+	//!Top State
+	EDROOM_SUB_Top_0 edroomTopState;
+
+
+
+};
+#endif
