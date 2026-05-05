@@ -33,14 +33,14 @@
 
 void pus_service129_exec_TC_129_1(tc_handler_t *ptc_handler) {
 
-	error_code_t error;
+	error_code_t error=0;
 
 	float FP_x, FP_y, FP_z;
 
 	/// TC -> N
-	error = tc_handler_get_uint8_appdata_field(ptc_handler, &FP_x);
-	error += tc_handler_get_uint8_appdata_field(ptc_handler, &FP_y);
-	error += tc_handler_get_uint8_appdata_field(ptc_handler, &FP_z);
+	error = tc_handler_get_float_appdata_field(ptc_handler, &FP_x);
+	error += tc_handler_get_float_appdata_field(ptc_handler, &FP_y);
+	error += tc_handler_get_float_appdata_field(ptc_handler, &FP_z);
 
 
 

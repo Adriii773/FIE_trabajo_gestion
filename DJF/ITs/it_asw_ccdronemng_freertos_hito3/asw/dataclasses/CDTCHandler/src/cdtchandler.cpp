@@ -133,9 +133,7 @@ void CDTCHandler::ExecRebootTC() {
 		uint8_t type = mTCHandler.tc_df_header.type;
 
 		switch (type) {
-		case (129):
-				pus_service129_exec_tc(&mTCHandler);
-				break;
+
 
 
 		default:
@@ -230,7 +228,9 @@ void CDTCHandler::ExecDroneTC() {
 		uint8_t type = mTCHandler.tc_df_header.type;
 
 		switch (type) {
-
+		case (129):
+			pus_service129_exec_tc(&mTCHandler);
+			break;
 
 
 		default:
