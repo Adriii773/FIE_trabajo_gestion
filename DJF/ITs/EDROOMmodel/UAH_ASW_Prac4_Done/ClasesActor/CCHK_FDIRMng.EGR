@@ -5,8 +5,8 @@
 0
 0
 [Modificado]
-0
-0
+1
+1
 0
 [Estructura]
 [Version Estructura]
@@ -279,7 +279,7 @@ time=VNextTimeout;
 // Lo que ya venía de fábrica:
 pus_services_update_params();
  
-pus_service4_update_all_stats();
+//pus_service4_update_all_stats();
  
 pus_service3_do_HK();
  
@@ -292,7 +292,7 @@ HK_FDIRTimer.InformAt(time);
 InformAt
 HK_FDIRTimer
 EDROOMSignalTimeout
-CDTCHandler
+
 EDROOMprioNormal
 MsgDataHandler
 FExecHK_FDIR_TC()

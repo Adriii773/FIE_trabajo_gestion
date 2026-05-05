@@ -81,7 +81,7 @@ time=VNextTimeout;
 // Lo que ya venía de fábrica:
 pus_services_update_params();
  
-pus_service4_update_all_stats();
+//pus_service4_update_all_stats();
  
 pus_service3_do_HK();
  
