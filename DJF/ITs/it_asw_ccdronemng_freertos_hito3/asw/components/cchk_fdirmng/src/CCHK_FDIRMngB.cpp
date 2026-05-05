@@ -75,17 +75,17 @@ void	CCHK_FDIRMng::EDROOM_CTX_Top_0::FDoHK_FDIR()
 	//time.Add(X,Y); // Add X sec + Y microsec
  
  
-VNextTimeout+= Pr_Time(1,0); // Añadimos 1 segundo
+VNextTimeout+= Pr_Time(1,0); // Aï¿½adimos 1 segundo
 time=VNextTimeout;
  
-// Lo que ya venía de fábrica:
+// Lo que ya venï¿½a de fï¿½brica:
 pus_services_update_params();
  
-pus_service4_update_all_stats();
+//pus_service4_update_all_stats();
  
 pus_service3_do_HK();
  
-// Lo que añadimos nosotros (ST[05] y ST[12]):
+// Lo que aï¿½adimos nosotros (ST[05] y ST[12]):
 pus_services_do_FDIR();
  
  
