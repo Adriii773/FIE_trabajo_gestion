@@ -119,7 +119,9 @@ void	CCTCManager::EDROOM_CTX_Top_0::FFwdDroneTC()
 	
 		// Complete Data 
 	
-	*pSDroneTC_Data=
+
+VTCExecCtrl.GetExecTC(pSDroneTC_Data);
+
    //Send message 
    DroneMngCtrl.send(SDroneTC,pSDroneTC_Data,&EDROOMPoolCDTCHandler); 
 }

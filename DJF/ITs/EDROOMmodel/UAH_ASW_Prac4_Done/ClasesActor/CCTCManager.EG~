@@ -5,8 +5,8 @@
 0
 0
 [Modificado]
-0
-0
+1
+1
 0
 [Estructura]
 [Version Estructura]
@@ -318,9 +318,9 @@ GFwdDroneTC()
 Ready
 DSubEst
 ;
+
  
- 
- 
+
 ;
 FFwdDroneTC();
 ;
@@ -500,11 +500,13 @@ FFwdDroneTC()
 0
 1
  
-4
+6
 	
 		// Complete Data 
 	
-	*pSDroneTC_Data=
+
+VTCExecCtrl.GetExecTC(pSDroneTC_Data);
+
 [ServiceRequest]
 send
 DroneMngCtrl
