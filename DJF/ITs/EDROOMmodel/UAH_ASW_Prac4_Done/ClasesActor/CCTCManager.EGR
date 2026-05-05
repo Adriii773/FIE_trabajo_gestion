@@ -5,7 +5,7 @@
 0
 0
 [Modificado]
-1
+0
 1
 0
 [Estructura]
@@ -318,9 +318,9 @@ GFwdDroneTC()
 Ready
 DSubEst
 ;
-
  
-
+ 
+ 
 ;
 FFwdDroneTC();
 ;
@@ -504,9 +504,9 @@ FFwdDroneTC()
 	
 		// Complete Data 
 	
-
-
-
+ 
+ 
+ 
 *pSDroneTC_Data = VCurrentTC;
 [ServiceRequest]
 send

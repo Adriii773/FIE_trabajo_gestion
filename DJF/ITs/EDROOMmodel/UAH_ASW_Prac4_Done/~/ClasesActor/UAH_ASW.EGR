@@ -47,9 +47,9 @@ EDROOMprioHigh
  
 [Version Grafico Actor Componente]
 0
-26.3672
+26.5625
 18.6858
-70.8984
+71.0937
 33.0595
 CCTCManager
 [Version Actor Componente]
@@ -126,10 +126,10 @@ HK_FDIRMng
 0
 Union3
 1
-DroneMngCtrl
 DataHandler
-TCManager
+DroneMngCtrl
 DroneMng
+TCManager
 [FinUniones]
 [NumTimers]
 2

@@ -5,7 +5,7 @@
 0
 0
 [Modificado]
-1
+0
 1
 0
 [Estructura]
@@ -84,12 +84,17 @@ CPDroneMngCtrl
 3
 0
 [Pools]
-1
+2
 [Version PoolDatosMens]
 0
 EDROOMPoolCDTCHandler
 CDTCHandler
 10
+[Version PoolDatosMens]
+0
+EDROOMPoolCDDroneConfig
+CDDroneConfig
+2
 [Modulos]
 2
 [Version Modulo]
@@ -237,7 +242,7 @@ FMngTCRejection();
 HandleTC
 0
 [Ramas]
-4
+5
 [Version Ramas]
 5
 ToReboot
@@ -308,6 +313,23 @@ FFwdBKGTC();
 0
 545 351 322 332 3
 [FinGraficoRama]
+FFwdDroneTC
+GFwdDroneTC()
+Ready
+DSubEst
+;
+ 
+ 
+ 
+;
+FFwdDroneTC();
+;
+;
+[GraficoRama]
+[Version GraficoRama]
+0
+553 351 322 388 2
+[FinGraficoRama]
 [Transiciones]
 4
 [Version Transicion]
@@ -319,8 +341,8 @@ Ready
 DSubEst
 FInit();
 [Trigger]
-EDROOMsl
-EDROOMStart
+*
+SEvAction
 true
  
  
@@ -428,7 +450,7 @@ CDTCExecCtrl
 Variable
 0
 [Metodos]
-15
+17
 [Version Metodos]
 21
 BasicAction
@@ -468,6 +490,28 @@ FFwdBKGTC()
 send
 BKGExecCtrl
 SBKGTC
+CDTCHandler
+EDROOMprioNormal
+SendMsg
+FFwdDroneTC()
+0
+0
+0
+0
+1
+ 
+7
+	
+		// Complete Data 
+	
+ 
+ 
+ 
+*pSDroneTC_Data = VCurrentTC;
+[ServiceRequest]
+send
+DroneMngCtrl
+SDroneTC
 CDTCHandler
 EDROOMprioNormal
 SendMsg
@@ -614,6 +658,16 @@ GFwdBKGTC()
 return VTCExecCtrl.IsBKGTC();
  
 Guard
+GFwdDroneTC()
+0
+0
+0
+0
+1
+ 
+1
+return VTCExecCtrl.IsDroneTC();
+Guard
 GFwdToHK_FDIR()
 0
 0
@@ -656,7 +710,7 @@ StandBy0
 [ObjetoGrafico]
 [Version Objeto Grafico]
 0
-165 199 90 60
+166 199 90 60
 [FinObjetoGrafico]
 [PuntosEleccion]
 0
@@ -673,28 +727,48 @@ StandBy0
 DSubEst
 ;
 [Trigger]
-EDROOMsl
-EDROOMStart
+*
+SEvAction
 true
  
  
  
 ;
 ;
-;
+FInvokeDroneSetUp();
 0
 ;
 [GraficoTransicion]
 [Version GraficoTransicion]
 0
-46 141 165 209 0
+46 141 166 209 0
 [FinGraficoTransicion]
 [VariablesConstantes]
 0
 [Metodos]
-0
+1
 [Version Metodos]
 21
+InvokeMsg
+FInvokeDroneSetUp()
+0
+0
+0
+0
+1
+ 
+5
+	
+pSDroneSetUp_Data->ZMinBeforeAdvance=10;
+pSDroneSetUp_Data->DefaultKp=0.2;
+pSDroneSetUp_Data->DefaultKi=0.15;
+pSDroneSetUp_Data->DefaultKd=0.05;
+[ServiceRequest]
+invoke
+DroneMngCtrl
+SDroneSetUp
+CDDroneConfig
+EDROOMprioVeryHigh
 [MaquinasSubEstados]
 0
 [FinMaquinasSubEstados]

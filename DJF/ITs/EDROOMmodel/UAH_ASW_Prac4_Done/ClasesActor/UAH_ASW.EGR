@@ -5,8 +5,8 @@
 0
 0
 [Modificado]
-0
-0
+1
+1
 3
 [Estructura]
 [Version Estructura]
@@ -126,10 +126,10 @@ HK_FDIRMng
 0
 Union3
 1
-DroneMngCtrl
 DataHandler
-TCManager
+DroneMngCtrl
 DroneMng
+TCManager
 [FinUniones]
 [NumTimers]
 2

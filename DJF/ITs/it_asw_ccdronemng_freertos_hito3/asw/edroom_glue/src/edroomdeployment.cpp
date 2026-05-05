@@ -70,38 +70,6 @@ void CEDROOMSystemCommSAP::SetComponents(UAH_ASW   *p_comp1,
 //*****************************************************************************
  
  
-TEDROOMSignal CEDROOMSystemCommSAP::C2TCManager_PDroneMngCtrl__C5DroneMng_PDataHandler(TEDROOMSignal signalOut){
- 
-	TEDROOMSignal signalIn;
- 
-	switch(signalOut){
- 
-		case( CCTCManager::SDroneTC):	 signalIn=CCDroneMng::SDroneTC; break;
- 
-		case( CCTCManager::SDroneSetUp):	 signalIn=CCDroneMng::SDroneSetUp; break;
- 
-		default: signalIn=(TEDROOMSignal)(-1); break;
- 
-	}
-	return signalIn;
- 
-}
- 
-TEDROOMSignal CEDROOMSystemCommSAP::C5DroneMng_PDataHandler__C2TCManager_PDroneMngCtrl(TEDROOMSignal signalOut){
- 
-	TEDROOMSignal signalIn;
- 
-	switch(signalOut){
- 
-		case( CCDroneMng::SDronerReady):	 signalIn=CCTCManager::SDronerReady; break;
- 
-		default: signalIn=(TEDROOMSignal)(-1); break;
- 
-	}
-	return signalIn;
- 
-}
- 
 TEDROOMSignal CEDROOMSystemCommSAP::C2TCManager_PHK_FDIRCtrl__C3HK_FDIRMng_PHK_FDIRCtrl(TEDROOMSignal signalOut){
  
 	TEDROOMSignal signalIn;
@@ -160,6 +128,38 @@ TEDROOMSignal CEDROOMSystemCommSAP::C4BKGTCExec_PBKGExecCtrl__C2TCManager_PBKGEx
  
 }
  
+TEDROOMSignal CEDROOMSystemCommSAP::C5DroneMng_PDataHandler__C2TCManager_PDroneMngCtrl(TEDROOMSignal signalOut){
+ 
+	TEDROOMSignal signalIn;
+ 
+	switch(signalOut){
+ 
+		case( CCDroneMng::SDronerReady):	 signalIn=CCTCManager::SDronerReady; break;
+ 
+		default: signalIn=(TEDROOMSignal)(-1); break;
+ 
+	}
+	return signalIn;
+ 
+}
+ 
+TEDROOMSignal CEDROOMSystemCommSAP::C2TCManager_PDroneMngCtrl__C5DroneMng_PDataHandler(TEDROOMSignal signalOut){
+ 
+	TEDROOMSignal signalIn;
+ 
+	switch(signalOut){
+ 
+		case( CCTCManager::SDroneTC):	 signalIn=CCDroneMng::SDroneTC; break;
+ 
+		case( CCTCManager::SDroneSetUp):	 signalIn=CCDroneMng::SDroneSetUp; break;
+ 
+		default: signalIn=(TEDROOMSignal)(-1); break;
+ 
+	}
+	return signalIn;
+ 
+}
+ 
  
  
 //*****************************************************************************
@@ -195,17 +195,17 @@ void CEDROOMSystemCommSAP::RegisterInterfaces(){
  
 void CEDROOMSystemCommSAP::SetLocalConnections(){
  
-	m_localCommSAP.Connect(mp_comp2->DroneMngCtrl, mp_comp5->DataHandler, connections[0], 
-					C2TCManager_PDroneMngCtrl__C5DroneMng_PDataHandler, 
-					C5DroneMng_PDataHandler__C2TCManager_PDroneMngCtrl);
- 
-	m_localCommSAP.Connect(mp_comp2->HK_FDIRCtrl, mp_comp3->HK_FDIRCtrl, connections[1], 
+	m_localCommSAP.Connect(mp_comp2->HK_FDIRCtrl, mp_comp3->HK_FDIRCtrl, connections[0], 
 					C2TCManager_PHK_FDIRCtrl__C3HK_FDIRMng_PHK_FDIRCtrl, 
 					C3HK_FDIRMng_PHK_FDIRCtrl__C2TCManager_PHK_FDIRCtrl);
  
-	m_localCommSAP.Connect(mp_comp2->BKGExecCtrl, mp_comp4->BKGExecCtrl, connections[2], 
+	m_localCommSAP.Connect(mp_comp2->BKGExecCtrl, mp_comp4->BKGExecCtrl, connections[1], 
 					C2TCManager_PBKGExecCtrl__C4BKGTCExec_PBKGExecCtrl, 
 					C4BKGTCExec_PBKGExecCtrl__C2TCManager_PBKGExecCtrl);
+ 
+	m_localCommSAP.Connect(mp_comp5->DataHandler, mp_comp2->DroneMngCtrl, connections[2], 
+					C5DroneMng_PDataHandler__C2TCManager_PDroneMngCtrl, 
+					C2TCManager_PDroneMngCtrl__C5DroneMng_PDataHandler);
  
 }
  

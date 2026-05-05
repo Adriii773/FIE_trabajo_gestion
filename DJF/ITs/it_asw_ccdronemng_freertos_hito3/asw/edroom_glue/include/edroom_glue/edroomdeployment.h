@@ -95,11 +95,6 @@ class CEDROOMSystemCommSAP{
  
 //Signal Conversion
  
-	static TEDROOMSignal C2TCManager_PDroneMngCtrl__C5DroneMng_PDataHandler(TEDROOMSignal signal);
-	static TEDROOMSignal C5DroneMng_PDataHandler__C2TCManager_PDroneMngCtrl(TEDROOMSignal signal);
- 
-//Signal Conversion
- 
 	static TEDROOMSignal C2TCManager_PHK_FDIRCtrl__C3HK_FDIRMng_PHK_FDIRCtrl(TEDROOMSignal signal);
 	static TEDROOMSignal C3HK_FDIRMng_PHK_FDIRCtrl__C2TCManager_PHK_FDIRCtrl(TEDROOMSignal signal);
  
@@ -107,6 +102,11 @@ class CEDROOMSystemCommSAP{
  
 	static TEDROOMSignal C2TCManager_PBKGExecCtrl__C4BKGTCExec_PBKGExecCtrl(TEDROOMSignal signal);
 	static TEDROOMSignal C4BKGTCExec_PBKGExecCtrl__C2TCManager_PBKGExecCtrl(TEDROOMSignal signal);
+ 
+//Signal Conversion
+ 
+	static TEDROOMSignal C5DroneMng_PDataHandler__C2TCManager_PDroneMngCtrl(TEDROOMSignal signal);
+	static TEDROOMSignal C2TCManager_PDroneMngCtrl__C5DroneMng_PDataHandler(TEDROOMSignal signal);
  
  
 //!Register Interfaces
