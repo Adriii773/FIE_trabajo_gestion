@@ -6,7 +6,7 @@
 [Nombre Modelo]
 UAH_ASW
 [Modificado]
-0
+1
 [Opciones Modelo]
 [Version Opciones Modelo]
 4
@@ -23,9 +23,9 @@ C:\Users\adrig\OneDrive\Documentos\GitHub\FIE_Gestiondatos\Practicas 4,5,6,7\asw
 [MESP main Directory]
 C:\Users\adrig\OneDrive\Documentos\GitHub\FIE_Gestiondatos\Practicas 4,5,6,7\asw_pus_rtems_5_0_leon3_st20_resuelto
 [MESP main prototype]
-extern "C" rtems_task Init (uint32_t arg)
+int main (void)
 [MESP main return]
-;
+return 0;
 [Dyn Priority]
 0
 [Main Cmp Priority]
