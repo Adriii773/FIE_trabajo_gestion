@@ -37,7 +37,12 @@ void pus_service129_exec_TC_129_1(tc_handler_t *ptc_handler) {
 
 	float FP_x, FP_y, FP_z;
 
-	// TODO 14 Part1 TC -> FP_x use tc_handler_get_float_appdata_field
+	/// TC -> N
+	error = tc_handler_get_uint8_appdata_field(ptc_handler, &FP_x);
+	error += tc_handler_get_uint8_appdata_field(ptc_handler, &FP_y);
+	error += tc_handler_get_uint8_appdata_field(ptc_handler, &FP_z);
+
+
 
 	// TODO 14 Part2  -> FP_y use tc_handler_get_float_appdata_field
 

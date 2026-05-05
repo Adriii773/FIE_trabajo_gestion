@@ -76,6 +76,9 @@ CDTCExecCtrl CDTCHandler::GetExecCtrl() {
 	case (20):
 		execCtrl.mExecCtrl = ExecCtrlBKGTC;
 		break;
+	case (129):
+			execCtrl.mExecCtrl = ExecCtrlDroneTC;
+		break;
 
 
 	default:
@@ -130,7 +133,9 @@ void CDTCHandler::ExecRebootTC() {
 		uint8_t type = mTCHandler.tc_df_header.type;
 
 		switch (type) {
-
+		case (129):
+				pus_service129_exec_tc(&mTCHandler);
+				break;
 
 
 		default:
@@ -160,9 +165,9 @@ void CDTCHandler::ExecHK_FDIRTC() {
 		case (3):
 			pus_service3_exec_tc(&mTCHandler);
 			break;
-		case (4):
-			pus_service4_exec_tc(&mTCHandler);
-			break;
+//		case (4):
+//			pus_service4_exec_tc(&mTCHandler);
+//			break;
 		case (5):
 			pus_service5_exec_tc(&mTCHandler);
 			break;
