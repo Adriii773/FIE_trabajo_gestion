@@ -500,13 +500,14 @@ FFwdDroneTC()
 0
 1
  
-6
+7
 	
 		// Complete Data 
 	
 
-VTCExecCtrl.GetExecTC(pSDroneTC_Data);
 
+
+*pSDroneTC_Data = VCurrentTC;
 [ServiceRequest]
 send
 DroneMngCtrl
