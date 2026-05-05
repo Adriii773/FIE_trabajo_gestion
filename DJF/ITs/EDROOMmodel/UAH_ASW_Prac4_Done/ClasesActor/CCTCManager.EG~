@@ -57,7 +57,7 @@ CPBKGExecCtrl
 [Version Puerto]
 0
 DroneMngCtrl
-0
+1
 1
 0
 [Version Grafico Puerto]
@@ -84,12 +84,17 @@ CPDroneMngCtrl
 3
 0
 [Pools]
-1
+2
 [Version PoolDatosMens]
 0
 EDROOMPoolCDTCHandler
 CDTCHandler
 10
+[Version PoolDatosMens]
+0
+EDROOMPoolCDDroneConfig
+CDDroneConfig
+2
 [Modulos]
 2
 [Version Modulo]
@@ -319,8 +324,8 @@ Ready
 DSubEst
 FInit();
 [Trigger]
-EDROOMsl
-EDROOMStart
+*
+SEvAction
 true
  
  
@@ -656,7 +661,7 @@ StandBy0
 [ObjetoGrafico]
 [Version Objeto Grafico]
 0
-165 199 90 60
+166 199 90 60
 [FinObjetoGrafico]
 [PuntosEleccion]
 0
@@ -673,28 +678,48 @@ StandBy0
 DSubEst
 ;
 [Trigger]
-EDROOMsl
-EDROOMStart
+*
+SEvAction
 true
  
  
  
 ;
 ;
-;
+FInvokeDroneSetUp();
 0
 ;
 [GraficoTransicion]
 [Version GraficoTransicion]
 0
-46 141 165 209 0
+46 141 166 209 0
 [FinGraficoTransicion]
 [VariablesConstantes]
 0
 [Metodos]
-0
+1
 [Version Metodos]
 21
+InvokeMsg
+FInvokeDroneSetUp()
+0
+0
+0
+0
+1
+
+5
+	
+pSDroneSetUp_Data->ZMinBeforeAdvance=10;
+pSDroneSetUp_Data->DefaultKp=0.2;
+pSDroneSetUp_Data->DefaultKi=0.15;
+pSDroneSetUp_Data->DefaultKd=0.05;
+[ServiceRequest]
+invoke
+DroneMngCtrl
+SDroneSetUp
+CDDroneConfig
+EDROOMprioVeryHigh
 [MaquinasSubEstados]
 0
 [FinMaquinasSubEstados]

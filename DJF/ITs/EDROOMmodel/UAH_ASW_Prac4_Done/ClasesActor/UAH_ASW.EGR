@@ -98,14 +98,14 @@ EDROOMprioNormal
  
 [Version Grafico Actor Componente]
 0
-39.2578
-45.7906
-56.8359
-68.3778
+39.4531
+48.6653
+57.0312
+71.2525
 CCDroneMng
 [FinActoresComponente]
 [Uniones]
-2
+3
 [Version Union]
 0
 Union2
@@ -122,6 +122,14 @@ HK_FDIRCtrl
 HK_FDIRCtrl
 TCManager
 HK_FDIRMng
+[Version Union]
+0
+Union3
+1
+DroneMngCtrl
+DataHandler
+TCManager
+DroneMng
 [FinUniones]
 [NumTimers]
 2
